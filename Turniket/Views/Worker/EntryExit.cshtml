@@ -1,0 +1,36 @@
+﻿@model Model
+<form asp-controller="Worker" asp-action="EntryExit" method="post">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="sel1">Full Name</label>
+                <select asp-for="@Model.WorkerId" class="form-control" id="sel1">
+
+                    @foreach (var worker in JsonConvert.DeserializeObject<List<Worker>>(ViewBag.Workers))
+                    {
+                        <option value="@worker.Id">@(worker.FirstName+" "+worker.LastName)</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" value="true" asp-for="@Model.Status" class="form-check-input">Entry
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" value="false" asp-for="@Model.Status" class="form-check-input" name="optradio">Exit
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary my-4">Submit</button>
+        </div>
+    </div>
+</form>

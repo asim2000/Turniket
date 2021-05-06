@@ -1,0 +1,25 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="/modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                @await Html.PartialAsync("_navbar")
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                @RenderBody()
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                @await Html.PartialAsync("_footer")
+            </div>
+        </div>
+    </div>
+</body>
+</html>

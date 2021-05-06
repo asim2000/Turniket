@@ -1,0 +1,25 @@
+﻿@model Worker
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-controller="Worker" asp-action="AddWorker" method="post">
+            <div class="form-group">
+                <label for="Identity">Identity</label>
+                <input class="form-control" type="text" asp-for="@Model.Identity" />
+            </div>
+            <div class="form-group">
+                <label for="FirstName">FirstName</label>
+                <input class="form-control" type="text" asp-for="@Model.FirstName" />
+            </div>
+            <div class="form-group">
+                <label for="LastName">LastName</label>
+                <input class="form-control" type="text" asp-for="@Model.LastName" />
+            </div>
+            <div class="form-group">
+                <label for="BirthDay">BirthDay</label>
+                <input class="form-control" type="date" asp-for="@Model.BirthDay" />
+            </div>
+            <button type="submit" class="btn btn-primary">Add Worker</button>
+        </form>
+    </div>
+</div>
